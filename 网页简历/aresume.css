@@ -32,10 +32,10 @@ body{
 }
 #site-aside{
     float: left;
-    width: 340px;
+    width: 315px;
     font-size: 16px;
     color: #fff;
-    padding: 30px 30px;
+    padding: 40px 30px 11px 30px;
     text-align: center;
     background-color: #242424;
 }
@@ -49,9 +49,8 @@ body{
     border-top: 1px solid #c8c8c8;
 }
 #site-aside .aside-content .baseinfo{
-    border-top: 2px solid #c8c8c8;
-    border-bottom: 2px solid #c8c8c8;
-    padding: 10px 0;
+    padding: 51px 0;
+    padding-bottom: 0px;
 }
 #site-aside .aside-content .baseinfo dt{
     width: 36%;
@@ -66,7 +65,9 @@ body{
     line-height: 35px;
 }
 #site-aside .aside-content .skills{
-    padding: 20px 0 323px;
+  /*  border-top: 2px solid #c8c8c8;
+    border-bottom: 2px solid #c8c8c8;*/
+    padding: 82px 0 57px;
 }
 #site-aside .aside-content .skills dt{
     width: 30%;
@@ -118,8 +119,9 @@ body{
 }
 #site-main{
     float: left;
-    width: 600px;
+    width: 625px;
     padding: 30px;
+    padding-top: 20px;
     font-size: 16px;
     background-color: #f4f1ea;
 }
@@ -139,7 +141,7 @@ body{
 }
 #site-main .master-project .main-title,
 #site-main .master-design .main-title{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 #site-main .project{
     margin-bottom: 10px;
@@ -163,7 +165,7 @@ body{
     margin-top: 10px;
 }
 #site-main .master-foot{
-    margin-top: 10px;
+    margin-top: 30px;
 }
 #site-main .master-foot .wish{
     padding-top: 10px;
