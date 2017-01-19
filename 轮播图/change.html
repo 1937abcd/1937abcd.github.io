@@ -121,33 +121,33 @@
             Atimer = setInterval(autoplay, 2000);
 
 //          左右箭头的点击函数
-            var arrowsItems = $("#arrowChange").children();
-            arrowsItems[0].onclick = function () {
-                clearInterval(Atimer);
-                if(count == 0){
-                    count = 3;
-                }
-                count -= 1;
-                console.log(count);
-                showImages(count);
-                Atimer = setInterval(autoplay, 2000);
-            }
-            arrowsItems[1].onclick = function () {
-                clearInterval(Atimer);
-                autoplay();
-                Atimer = setInterval(autoplay, 2000);
-            }
-
-
-            //          定义小圆点击函数
-//            console.log(circlesItems[0].children[0]);
-            for(var i = 0; i < liLen; i++){
-                circlesItems[i].index = i;
-                circlesItems[i].onclick = function () {
+                var arrowsItems = $("#arrowChange").children();
+                arrowsItems[0].onclick = function () {
                     clearInterval(Atimer);
-                    showImages(this.index);
+                    if(count == 0){
+                        count = 3;
+                    }
+                    count -= 1;
+                    console.log(count);
+                    showImages(count);
                     Atimer = setInterval(autoplay, 2000);
                 }
+                arrowsItems[1].onclick = function () {
+                    clearInterval(Atimer);
+                    autoplay();
+                    Atimer = setInterval(autoplay, 2000);
+                }
+
+
+                //          定义小圆点击函数
+//            console.log(circlesItems[0].children[0]);
+                for(var i = 0; i < liLen; i++){
+                    circlesItems[i].index = i;
+                    circlesItems[i].onclick = function () {
+                        clearInterval(Atimer);
+                        showImages(this.index);
+                        Atimer = setInterval(autoplay, 2000);
+                    }
             }
 
         })

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://cdn.gbtags.com/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.gbtags.com/highcharts/4.1.9/highcharts.js"></script>
+    <style type="text/css">
+        #div1{
+            position:relative;
+            left: 50%;
+            background: pink;
+            width: 300px;
+            height: 500px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            margin-left: -150px;
+            padding-bottom: 20px;
+        }
+        #div1 select{
+            margin-left : 80px;
+            margin-top : 10px;
+            height: 30px;
+        }
+        #div1 input{
+            height: 30px;
+        }
+        #div1 div{
+            width: 300px;
+            background: pink;
+        }
+        #div1 div ul li{
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<div id="div1">
+    <input type="text" id="city"/>
+    <input type="button" value="查看天气" id="btn"/>
+    <div id="info"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var headers = {"apikey": 'ddb8a063aa0af79ebc086ac77e5ff4dc'};
+        $("#btn").click(function () {
+            var url = 'http://apis.baidu.com/apistore/weatherservice/recentweathers?cityname='+$("#city").val();
+//            console.log(url);
+            $.ajax(url, {
+                method: 'get',
+                headers: headers,
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data.retData);
+                    var today = data.retData.today;
+                    console.log(today);
+                    var info = $("#info");
+                    info[0].innerHTML = '';
+                        var date = today.date;
+                        var week = today.week;
+                        var curtemp = today.curTemp;
+                        var fengx = today.fengxiang;
+                        var fengli = today.fengli;
+                        var hightemp = today.hightemp;
+                        var lowtemp = today.lowtemp;
+                        var weather = today.type;
+                        var index = today.index[0];
+                        console.log(index.name);
+                        var tag = '';
+                        tag += '<h3>' + data.retData.city + '</h3>';
+                        tag += '<p>日期: ' + date + '</p>';
+                        tag += '<p>星期: ' + week + '</p>';
+                        tag += '<p>当前温度: ' + curtemp + '</p>';
+                        tag += '<p>今天最高温: ' + hightemp + '</p>';
+                        tag += '<p>今天最低温: ' + lowtemp + '</p>';
+                        tag += '<p>天气: ' + weather + '</p>';
+                        tag += '<p>风向: ' + fengx + '</p>';
+                        tag += '<p>风力: ' + fengli + '</p>';
+                        var div = document.createElement('div');
+                        div.innerHTML = tag;
+                        info.append(div);
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
