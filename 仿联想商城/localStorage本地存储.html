@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地存储localstorage</title>
+</head>
+<body>
+
+<input type="color" name="color" id="color">
+
+<script>
+    // 本地存储 和 会话存储的作用是一模一样的 区别在于浏览器关闭的时候会话存储的数据清空
+//    本地存储的数据不会被清空 即便是过了几年也还在 除非用户手动清除 浏览器被删除等等
+//    利用颜色选择器 进行颜色选择 将颜色设置为背景颜色 并存储到本地当中 下次打开该页面依然有背景
+//    1、创建颜色选择器
+//    2、获取颜色
+//    3、存到本地存储
+//    4、获取本地存储
+
+//    这里是第四步:
+    if(localStorage.getItem('color'))
+    {
+        document.body.style.backgroundColor = localStorage.getItem('color');
+    }
+
+    var color = document.getElementById('color');
+    color.onchange = function (e) {
+//        console.log(this.value);
+//        console.log(e.target.value);
+        saveColor(e.target.value);
+    }
+    
+    function saveColor(color) {
+        localStorage.setItem('color',color);
+    }
+</script>
+
+</body>
+</html>

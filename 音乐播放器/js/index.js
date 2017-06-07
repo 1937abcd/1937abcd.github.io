@@ -3,21 +3,21 @@ var songs = [
 		name:"LOSER",
 	    singer:"郑小宇",
 	    album:"LOSER",
-	    url:"src/郑小宇%20-%20LOSER.mp3",
+	    url:"http://m2.music.126.net/t24d6GoZRkqxzFAovlZEQw==/6027522743661760.mp3",
 		picture:"imgs/7.jpg"
 	},
 	{
 	    name:"葫芦葫芦瓢",
 	    singer:"1022女生",
 	    album:"天天向上集锦",
-	    url:"src/胡撸胡撸瓢儿.mp3",
+	    url:"http://yinyueshiting.baidu.com/data2/music/242078559/242078437133200128.mp3",
 	    picture:"imgs/8.jpg"
 	},
 	{
 	    name:"半岛铁盒",
 	    singer:"刘瑞琦",
 	    album:"再见周杰伦",
-	    url:"src/刘瑞琦%20-%20半岛铁盒.mp3",
+	    url:"http://tingapi.ting.baidu.com/v1/restserver/ting?format=json&calback=&from=webapp_music&method==baidu.ting.song.play&songid=877578",
 	    picture:"imgs/9.jpg"
 	}
 ]

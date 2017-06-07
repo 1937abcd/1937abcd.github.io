@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+实验 <input id="test" type="text">
+ <button id="btn">提交</button>
+<script>
+    var test = document.getElementById('test');
+    var btn = document.getElementById('btn');
+    var storage = window.localStorage;
+
+
+    btn.onclick = function()
+    {
+        saveValue(test.target.value);
+    }
+    function saveValue(testval) {
+        localStorage.setItem('testval',testval);
+    }
+    if(localStorage.getItem('testval'))
+    {
+        console.log(localStorage.getItem('test'));
+    }
+
+</script>
+
+</body>
+</html>
